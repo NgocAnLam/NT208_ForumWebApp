@@ -1,0 +1,55 @@
+{% extends 'base_layout.html' %} {% block content %}
+<div class="card">
+  <div class="card-header">{{question.title}} - #{{question.tag}}</div>
+  <div class="card-body">
+    <a class="text-decoration-none" href="{% url 'accounts:accounts_profile_user' username=question.author %}">
+      <img class="rounded-circle account-img" width="35" src="{{ question.author.profile.image.url }}" />
+      {{question.author}}
+    </a>
+    {% if question.thumbnail %}
+    <div class="container mt-3 d-flex justify-content-center">
+      <img src="{{ question.thumbnail.url }}" height="400" />
+    </div>
+    {% endif %}
+    <p class="mt-4">{{question.content}}</p>
+    <p>{{question.date}}</p>
+
+
+  </div>
+</div>
+<div class="card mt-2">
+  <div class="card-header">Comments</div>
+  <div class="card-body">
+
+    {% for comment in question.comments.all %}
+    <div class="d-flex justify-content-between">
+      <h5 class="pl-2">
+        <a class="text-decoration-none" href="{% url 'accounts:accounts_profile_user' username=comment.author %}">
+          <img class="rounded-circle account-img" width="35" src="{{ comment.author.profile.image.url }}" />
+          {{comment.author}}
+        </a>
+      </h5>
+      <i> {{ comment.date }}</i>
+    </div>
+    <p>{{ comment.content|linebreaks }}</p>
+    <hr />
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+    <form method="POST" action="{% url 'question_detail' question.id %}">
+      {% csrf_token %}
+      <textarea name="content" class="form-control" rows="3" placeholder="Write your answer..."></textarea>
+      <button class="btn btn-primary mt-2 float-end" type="submit" name="button">
+        Comment
+      </button>
+    </form>
+    {% else %}
+    <div class="alert alert-warning" role="alert">
+      Đăng nhập để viết bình luận cho câu hỏi này!
+    </div>
+    {% endif %}
+  </div>
+
+</div>
+
+{% endblock %}

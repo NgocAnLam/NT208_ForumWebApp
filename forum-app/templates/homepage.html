@@ -1,0 +1,106 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex align-items-center">
+
+  <div class="row">
+    <div class="col-lg-6 d-flex flex-column justify-content-center">
+      <h1 data-aos="fade-up">Welcome to the Knowledge hub! What kind of knowledge do you want to share?</h1>
+      <h4 data-aos="fade-up" data-aos-delay="400">The most efficient way to enrich your own world of knowledge is to
+        accumulate it by internalizing new things from people around the globe. And this is your first start to do it.
+      </h4>
+      <div data-aos="fade-up" data-aos-delay="600">
+        <div class="text-center text-lg-start">
+          <a href="/questions"
+            class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center text-decoration-none">
+            <span>Go to forum</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+      <img src="/static/images/hero-img.png" class="img-fluid" alt="">
+    </div>
+  </div>
+
+</section>
+<!-- End Hero -->
+
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+
+  <div data-aos="fade-up">
+    <div class="row gx-0">
+
+      <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="content">
+          <h3>What is this website about?</h3>
+          <h2></h2>
+          <p>
+            If you want to know the unknown things that are not commonly taught by teachers at school or simply you
+            cannot find a honest or suitable answer on google, you are free to ask anyone in the forum and maybe, you
+            will figure out what you want to know.
+            Also, you can share what kind of knowledge you are holding to people in this place to trade for newly
+            amazing things from others in the comment section of your post.
+          </p>
+          <div class="text-center text-lg-start">
+            <a href="/about"
+              class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center text-decoration-none">
+              <span>About Us</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+        <img src="static/images/about.jpg" class="img-fluid" alt="">
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- End About Section -->
+
+<!-- ======= Values Section ======= -->
+<section id="values" class="values pt-5">
+
+  <div data-aos="fade-up">
+
+    <header class="section-header">
+      <h2>Our Values</h2>
+      <p>These are 3 important points we are heading to</p>
+    </header>
+
+    <div class="row">
+
+      <div class="col-lg-4">
+        <div class="box" data-aos="fade-up" data-aos-delay="200">
+          <img src="static/images/values-1.png" class="img-fluid" alt="">
+          <h3>Comprehensive understanding</h3>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        <div class="box" data-aos="fade-up" data-aos-delay="400">
+          <img src="static/images/values-2.png" class="img-fluid" alt="">
+          <h3>Discovering new land of knowledge</h3>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        <div class="box" data-aos="fade-up" data-aos-delay="600">
+          <img src="static/images/values-3.png" class="img-fluid" alt="">
+          <h3>New friends, new connection, new knowledges</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- End Values Section -->
+{% endblock %}
